@@ -8,10 +8,7 @@ html {
     font-size: 62.5%;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-}
-
-body {
-    position: relative;
+    background-color: aqua;
 }
 
 h1 {
@@ -89,7 +86,7 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    position: relative;
 }
 
 .top-bar {
@@ -136,9 +133,55 @@ h2 {
     color: #000000;
 }
 
-.contact-screen {
+.contact-background {
     position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: end;
 }
+
+.contact-bar {
+    width: 259px;
+    background-color: #FFFFFF;
+}
+
+.contact-bar {
+    padding: 0 18px;
+}
+
+.contact-bar li {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.contact-select ion-icon {
+    font-size: 27px;
+    margin-right: 10px;
+}
+
+.privacy-select ion-icon {
+    font-size: 23px;
+    margin-right: 10px;
+}
+
+.contact-bar-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 26px;
+    margin-bottom: 30px;
+}
+
+.privacy-select .contact-bar-title {
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
 
 .hidden {
     display: none;
