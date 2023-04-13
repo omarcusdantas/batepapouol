@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/message.css">
+    <title>Bate-Papo UOL</title>
+</head>
+<body>
+    <div class="login-screen hidden">
+        <h1>Bate-Papo UOL</h1>
+        <img src="./src/img/logo.png" alt="">
+        <input type="text" placeholder="Digite seu nome">
+        <button>Entrar</button>
+    </div>
+    <div class="loading-screen hidden">
+        <img src="./src/img/logo.png" alt="">
+        <img src="./src/img/loading.jpg" alt="">
+        <h2>Entrando...</h2>
+    </div>
+    <div class="messages-screen">
+        <div class="top-bar">
+            <img src="./src/img/logo.png" alt="">
+            <ion-icon name="people"></ion-icon>
+        </div>
+        <div class="messages-container">
+            <ul>
+                <li class="message-status">
+                    <h3 class="message-content"><span class="message-time">(09:21:45)</span><strong>João</strong>entra na sala...</h3>
+                </li>
+                <li class="message-all">
+                    <h3 class="message-content"><span class="message-time">(09:22:38)</span><strong>Maria</strong>para<strong>João:</strong>Oi João :)</h3>
+                </li>
+                <li class="message-private">
+                    <h3 class="message-content"><span class="message-time">(09:22:48)</span><strong>João</strong>reservadamente para<strong>Maria:</strong>Oi gatinha quer tc?</h3>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom-bar">
+            <div class="message-input">
+                <input type="text" placeholder="Escreva aqui...">
+            </div>
+            <ion-icon name="paper-plane-outline"></ion-icon>
+        </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+</html>
