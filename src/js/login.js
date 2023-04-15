@@ -52,3 +52,9 @@ function connect() {
         .then(connectionSuccess(data))
         .catch(error => connectionError(error));    
 }
+
+loginScreen.querySelector('input').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' || event.keyCode === 13) {
+        connect();
+    }
+})

@@ -1,5 +1,7 @@
+messageInput = document.querySelector('.message-input');
+
 function sendMessage() {
-    const messageText = document.querySelector('.message-input').querySelector('input').value;
+    let messageText = messageInput.querySelector('input').value;
 
     const data = {
         from: nameText,
@@ -7,6 +9,8 @@ function sendMessage() {
         text: messageText,
         type: "message"
     };
+
+    messageInput.querySelector('input').value = '';
 
     axios.post('https://mock-api.driven.com.br/api/vm/uol/messages', data)
         .then(getMessages)
@@ -53,3 +57,9 @@ function getMessages() {
         .then(response => renderMessages(response.data))
         .catch(error => console.log(error));
 }
+
+messageInput.querySelector('input').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' || event.keyCode === 13) {
+        sendMessage();
+    }
+})
