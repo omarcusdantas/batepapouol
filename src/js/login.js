@@ -52,7 +52,7 @@ function connect() {
     }
 
     axios.post('https://mock-api.driven.com.br/api/vm/uol/participants', data)
-        .then(connectionSuccess(data))
+        .then(() => connectionSuccess(data))
         .catch(error => connectionError(error));    
 }
 

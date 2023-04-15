@@ -4,7 +4,11 @@ let messagePrivacy = "público";
 let messageType = "message";
 
 function sendMessage() {
-    let messageText = messageInput.querySelector('input').value;
+    const messageText = messageInput.querySelector('input').value;
+
+    if (messageText === "" || messageText === null) {
+        return;
+    }
 
     const data = {
         from: nameText,
