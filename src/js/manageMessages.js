@@ -21,7 +21,7 @@ function sendMessage() {
 
     axios.post('https://mock-api.driven.com.br/api/vm/uol/messages', data)
         .then(getMessages)
-        .catch(window.location.reload);
+        .catch(window.location.reload());
 }
 
 function renderMessages(messages) {

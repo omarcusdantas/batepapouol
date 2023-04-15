@@ -31,13 +31,13 @@ function selectContact(contact) {
 function renderContacts(contacts) {
     if (contactSelected === "Todos") {
         contactsList.innerHTML = `
-            <li onclick="selectContact(this)" data-test="all">
+            <li onclick="selectContact(this)" data-test="all" data-test="check">
                 <ion-icon name="people"></ion-icon>Todos<ion-icon class="check selected" name="checkmark-sharp"></ion-icon>
             </li>`;
     }
     else {
         contactsList.innerHTML = `
-            <li onclick="selectContact(this)" data-test="all">
+            <li onclick="selectContact(this)" data-test="all" data-test="check">
                 <ion-icon name="people"></ion-icon>Todos<ion-icon class="check hidden" name="checkmark-sharp"></ion-icon>
             </li>`;
     }

@@ -2,7 +2,6 @@ const loginScreen = document.querySelector('.login-screen');
 const loadingScreen = document.querySelector('.loading-screen');
 const messagesScreen = document.querySelector('.messages-screen');
 let nameText;
-let statusIntervalId;
 
 axios.defaults.headers.common['Authorization'] = 'hQ1BXpUEVI2NU3TNeV1FWm1W';
 
@@ -12,8 +11,6 @@ function toggleMessagesScreen() {
 }
 
 function disconnected() {
-    messagesScreen.classList.toggle('hidden');
-    loginScreen.classList.toggle('hidden');
     alert('Desconectado do servidor');
 }
 
@@ -23,7 +20,7 @@ function statusUpdate(data) {
 }
 
 function connectionSuccess(data) {
-    statusIntervalId = setInterval(statusUpdate, 5000, data);
+    setInterval(statusUpdate, 5000, data);
     toggleMessagesScreen();
     getMessages();
     getContacts();
