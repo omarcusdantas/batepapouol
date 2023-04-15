@@ -31,13 +31,13 @@ function selectContact(contact) {
 function renderContacts(contacts) {
     if (contactSelected === "Todos") {
         contactsList.innerHTML = `
-            <li onclick="selectContact(this)">
+            <li onclick="selectContact(this)" data-test="all">
                 <ion-icon name="people"></ion-icon>Todos<ion-icon class="check selected" name="checkmark-sharp"></ion-icon>
             </li>`;
     }
     else {
         contactsList.innerHTML = `
-            <li onclick="selectContact(this)">
+            <li onclick="selectContact(this)" data-test="all">
                 <ion-icon name="people"></ion-icon>Todos<ion-icon class="check hidden" name="checkmark-sharp"></ion-icon>
             </li>`;
     }
@@ -45,15 +45,19 @@ function renderContacts(contacts) {
     contacts.forEach((contact) => {
         if (contact.name != nameText && contact.name === contactSelected) {
             contactsList.innerHTML += `
-                <li onclick="selectContact(this)"><ion-icon name="person-circle">
-                    </ion-icon></ion-icon>${contact.name}<ion-icon class="check selected" name="checkmark-sharp"></ion-icon>
+                <li onclick="selectContact(this)" data-test="participant">
+                    <ion-icon name="person-circle"></ion-icon>
+                    ${contact.name}
+                    <ion-icon class="check selected" name="checkmark-sharp" data-test="check"></ion-icon>
                 </li>`   
         }
 
         else if (contact.name != nameText) {
             contactsList.innerHTML += `
-                <li onclick="selectContact(this)"><ion-icon name="person-circle">
-                    </ion-icon></ion-icon>${contact.name}<ion-icon class="check hidden" name="checkmark-sharp"></ion-icon>
+                <li onclick="selectContact(this)" data-test="participant">
+                    <ion-icon name="person-circle"></ion-icon>
+                    ${contact.name}
+                    <ion-icon class="check hidden" name="checkmark-sharp" data-test="check"></ion-icon>
                 </li>`
         }
     })

@@ -27,7 +27,7 @@ function renderMessages(messages) {
     messages.forEach((message) => {
         if (message.type === 'private_message' && (message.from === nameText || message.to === nameText )) {
             messagesList.innerHTML += `
-                <li class="message-private">
+                <li class="message-private" data-test="message">
                     <h3 class="message-content"><span class="message-time">(${message.time})</span><strong>${message.from}</strong>
                     reservadamente para<strong>${message.to}:</strong>${message.text}</h3>
                 </li>
@@ -35,7 +35,7 @@ function renderMessages(messages) {
         }
         else if (message.type === 'message') {
             messagesList.innerHTML += `
-                <li class="message-all">
+                <li class="message-all" data-test="message">
                     <h3 class="message-content"><span class="message-time">(${message.time})</span><strong>${message.from}</strong>
                     para<strong>${message.to}:</strong>${message.text}</h3>
                 </li>
@@ -43,7 +43,7 @@ function renderMessages(messages) {
         }
         else if (message.type === 'status') {
             messagesList.innerHTML += `
-                <li class="message-status">
+                <li class="message-status" data-test="message">
                     <h3 class="message-content"><span class="message-time">(${message.time})</span><strong>${message.from}</strong>${message.text}</h3>
                 </li>
             `;

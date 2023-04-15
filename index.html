@@ -24,43 +24,35 @@
     <div class="messages-screen hidden">
         <div class="top-bar">
             <img src="./src/img/logo.png" alt="">
-            <ion-icon name="people" onclick="toggleContactBar()"></ion-icon>
+            <ion-icon name="people" data-test="open-participants" onclick="toggleContactBar()"></ion-icon>
         </div>
         <div class="messages-container">
             <ul>
-                <li class="message-status">
-                    <h3 class="message-content"><span class="message-time">(09:21:45)</span><strong>João</strong>entra na sala...</h3>
-                </li>
-                <li class="message-all">
-                    <h3 class="message-content"><span class="message-time">(09:22:38)</span><strong>Maria</strong>para<strong>João:</strong>Oi João :)</h3>
-                </li>
-                <li class="message-private">
-                    <h3 class="message-content"><span class="message-time">(09:22:48)</span><strong>João</strong>reservadamente para<strong>Maria:</strong>Oi gatinha quer tc?</h3>
-                </li>
             </ul>
         </div>
         <div class="bottom-bar">
             <div class="message-input">
-                <input type="text" placeholder="Escreva aqui...">
+                <input type="text" placeholder="Escreva aqui..." data-test="input-message">
                 <h3>Enviando para Todos (público)</h3>
             </div>
-            <ion-icon name="paper-plane-outline" onclick="sendMessage()"></ion-icon>
+            <ion-icon name="paper-plane-outline" data-test="send-message" onclick="sendMessage()"></ion-icon>
         </div>
         <div class="contact-background hidden">
             <div class="contact-bar">
                 <div class="contact-select">
                     <div class="contact-bar-title">Escolha um contato<br>para enviar mensagem:</div>
                     <ul class="contacts">
-                        <li onclick="selectContact()"><ion-icon name="people"></ion-icon>Todos<ion-icon class="check" name="checkmark-sharp"></ion-icon></li>
-                        <li onclick="selectContact()"><ion-icon name="person-circle"></ion-icon></ion-icon>João<ion-icon class="check" name="checkmark-sharp"></ion-icon></li>
-                        <li onclick="selectContact()"><ion-icon name="person-circle"></ion-icon></ion-icon>Maria<ion-icon class="check" name="checkmark-sharp"></ion-icon></li>
                     </ul>
                 </div>
                 <div class="privacy-select">
                     <div class="contact-bar-title">Escolha a visibilidade:</div>
                     <ul class="privacies">
-                        <li onclick="selectPublic()" class="public"><ion-icon name="lock-open"></ion-icon>Público<ion-icon class="check" name="checkmark-sharp"></ion-icon></li>
-                        <li onclick="selectPrivate()" class="private"><ion-icon name="lock-closed"></ion-icon>Reservadamente<ion-icon class="check hidden" name="checkmark-sharp"></ion-icon></li>
+                        <li onclick="selectPublic()" class="public" data-test="public">
+                            <ion-icon name="lock-open"></ion-icon>Público<ion-icon class="check" name="checkmark-sharp" data-test="check"></ion-icon>
+                        </li>
+                        <li onclick="selectPrivate()" class="private" data-test="private">
+                            <ion-icon name="lock-closed"></ion-icon>Reservadamente<ion-icon class="check hidden" name="checkmark-sharp" data-test="check"></ion-icon>
+                        </li>
                     </ul>
                 </div>
             </div>        
