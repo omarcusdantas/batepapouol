@@ -1,3 +1,18 @@
+function sendMessage() {
+    const messageText = document.querySelector('.message-input').querySelector('input').value;
+
+    const data = {
+        from: nameText,
+        to: "Todos",
+        text: messageText,
+        type: "message"
+    };
+
+    axios.post('https://mock-api.driven.com.br/api/vm/uol/messages', data)
+        .then(getMessages)
+        .catch(window.location.reload);
+}
+
 function renderMessages(messages) {
     const messagesList = document.querySelector('.messages-container').querySelector('ul');
     messagesList.innerHTML = '';
