@@ -1,13 +1,16 @@
-messageInput = document.querySelector('.message-input');
+const messageInput = document.querySelector('.message-input');
+let contactSelected = "Todos";
+let messagePrivacy = "público";
+let messageType = "message";
 
 function sendMessage() {
     let messageText = messageInput.querySelector('input').value;
 
     const data = {
         from: nameText,
-        to: "Todos",
+        to: contactSelected,
         text: messageText,
-        type: "message"
+        type: messageType
     };
 
     messageInput.querySelector('input').value = '';
@@ -22,7 +25,7 @@ function renderMessages(messages) {
     messagesList.innerHTML = '';
 
     messages.forEach((message) => {
-        if (message.type === 'private_message' && message.from === nameText) {
+        if (message.type === 'private_message' && (message.from === nameText || message.to === nameText )) {
             messagesList.innerHTML += `
                 <li class="message-private">
                     <h3 class="message-content"><span class="message-time">(${message.time})</span><strong>${message.from}</strong>

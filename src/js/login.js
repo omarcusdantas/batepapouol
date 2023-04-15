@@ -25,7 +25,10 @@ function statusUpdate(data) {
 function connectionSuccess(data) {
     statusIntervalId = setInterval(statusUpdate, 5000, data);
     toggleMessagesScreen();
-    setInterval(getMessages,3000);
+    getMessages();
+    getContacts();
+    setInterval(getMessages, 3000);
+    setInterval(getContacts, 10000);
 }
 
 function toggleLoginScreen() {

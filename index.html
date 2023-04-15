@@ -24,7 +24,7 @@
     <div class="messages-screen hidden">
         <div class="top-bar">
             <img src="./src/img/logo.png" alt="">
-            <ion-icon name="people"></ion-icon>
+            <ion-icon name="people" onclick="toggleContactBar()"></ion-icon>
         </div>
         <div class="messages-container">
             <ul>
@@ -42,7 +42,7 @@
         <div class="bottom-bar">
             <div class="message-input">
                 <input type="text" placeholder="Escreva aqui...">
-                <h3>Enviando para Maria (reservadamente)</h3>
+                <h3>Enviando para Todos (público)</h3>
             </div>
             <ion-icon name="paper-plane-outline" onclick="sendMessage()"></ion-icon>
         </div>
@@ -51,16 +51,16 @@
                 <div class="contact-select">
                     <div class="contact-bar-title">Escolha um contato<br>para enviar mensagem:</div>
                     <ul class="contacts">
-                        <li><ion-icon name="people"></ion-icon>Todos<ion-icon class="check" name="checkmark-sharp"></ion-icon></li>
-                        <li><ion-icon name="person-circle"></ion-icon></ion-icon>João<ion-icon class="check" name="checkmark-sharp"></ion-icon></li>
-                        <li><ion-icon name="person-circle"></ion-icon></ion-icon>Maria<ion-icon class="check" name="checkmark-sharp"></ion-icon></li>
+                        <li onclick="selectContact()"><ion-icon name="people"></ion-icon>Todos<ion-icon class="check" name="checkmark-sharp"></ion-icon></li>
+                        <li onclick="selectContact()"><ion-icon name="person-circle"></ion-icon></ion-icon>João<ion-icon class="check" name="checkmark-sharp"></ion-icon></li>
+                        <li onclick="selectContact()"><ion-icon name="person-circle"></ion-icon></ion-icon>Maria<ion-icon class="check" name="checkmark-sharp"></ion-icon></li>
                     </ul>
                 </div>
                 <div class="privacy-select">
                     <div class="contact-bar-title">Escolha a visibilidade:</div>
                     <ul class="privacies">
-                        <li><ion-icon name="lock-open"></ion-icon>Público<ion-icon class="check" name="checkmark-sharp"></ion-icon></li>
-                        <li><ion-icon name="lock-closed"></ion-icon>Reservadamente<ion-icon class="check" name="checkmark-sharp"></ion-icon></li>
+                        <li onclick="selectPublic()" class="public"><ion-icon name="lock-open"></ion-icon>Público<ion-icon class="check" name="checkmark-sharp"></ion-icon></li>
+                        <li onclick="selectPrivate()" class="private"><ion-icon name="lock-closed"></ion-icon>Reservadamente<ion-icon class="check hidden" name="checkmark-sharp"></ion-icon></li>
                     </ul>
                 </div>
             </div>        
@@ -70,5 +70,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./src/js/login.js"></script>
     <script src="./src/js/manageMessages.js"></script>
+    <script src="./src/js/manageContacts.js"></script>
+    <script src="./src/js/managePrivacy.js"></script>
 </body>
 </html>
