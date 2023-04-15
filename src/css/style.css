@@ -139,61 +139,6 @@ h3 {
     color: #000000;
 }
 
-.contact-background {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: end;
-}
-
-.contact-bar {
-    width: 259px;
-    background-color: #FFFFFF;
-    padding: 0 18px;
-}
-
-.contact-bar li {
-    margin-bottom: 10px;
-    font-size: 1.6rem;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.check {
-    position: absolute;
-    bottom: 8px;
-    right: 0;
-    color: #28BB25;
-}
-
-
-.contact-select ion-icon:first-child {
-    font-size: 27px;
-    margin-right: 9px;
-}
-
-.privacy-select ion-icon:first-child {
-    font-size: 23px;
-    margin-right: 10px;
-}
-
-.contact-bar-title {
-    font-size: 1.6rem;
-    font-weight: 700;
-    text-align: center;
-    padding-top: 26px;
-    margin-bottom: 30px;
-}
-
-.privacy-select .contact-bar-title {
-    padding-top: 20px;
-    margin-bottom: 20px;
-}
-
 @media (max-width: 576px) {
     .messages-screen {
         height: 100vh;

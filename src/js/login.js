@@ -10,27 +10,25 @@ function toggleMessagesScreen() {
     messagesScreen.classList.toggle('hidden');
 }
 
-function disconnected() {
-    alert('Desconectado do servidor');
+function toggleLoginScreen() {
+    loginScreen.classList.toggle('hidden');
+    loadingScreen.classList.toggle('hidden');
 }
 
 function statusUpdate(data) {
     axios.post('https://mock-api.driven.com.br/api/vm/uol/status', data)
-        .catch(disconnected);
+        .catch(() => alert('Desconectado do servidor'));
 }
 
 function connectionSuccess(data) {
-    setInterval(statusUpdate, 5000, data);
-    toggleMessagesScreen();
     getMessages();
     getContacts();
+
+    setInterval(statusUpdate, 5000, data);
     setInterval(getMessages, 3000);
     setInterval(getContacts, 10000);
-}
-
-function toggleLoginScreen() {
-    loginScreen.classList.toggle('hidden');
-    loadingScreen.classList.toggle('hidden');
+    
+    toggleMessagesScreen();
 }
 
 function connectionError(error) {

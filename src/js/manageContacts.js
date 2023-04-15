@@ -24,6 +24,7 @@ function selectContact(contact) {
     if (contactSelected === 'Todos') {
         selectPublic();
     }
+
     messageTarget.innerText = `Enviando para ${contactSelected} (${messagePrivacy})`
     markContactCheck();
 }
@@ -35,6 +36,7 @@ function renderContacts(contacts) {
                 <ion-icon name="people"></ion-icon>Todos<ion-icon class="check selected" name="checkmark-sharp"></ion-icon>
             </li>`;
     }
+    
     else {
         contactsList.innerHTML = `
             <li onclick="selectContact(this)" data-test="all" data-test="check">
