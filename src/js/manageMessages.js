@@ -20,7 +20,7 @@ function sendMessage() {
     messageInput.querySelector('input').value = '';
 
     axios.post('https://mock-api.driven.com.br/api/vm/uol/messages', data)
-        .then(getMessages())
+        .then(getMessages)
         .catch(window.location.reload());
 }
 
