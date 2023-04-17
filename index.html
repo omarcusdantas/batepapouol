@@ -1,69 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/css/reset.css">
-    <link rel="stylesheet" href="./src/css/style.css">
-    <link rel="stylesheet" href="./src/css/message.css">
-    <link rel="stylesheet" href="./src/css/contact-bar.css">
-    <title>Bate-Papo UOL</title>
-</head>
-<body>
-    <div class="login-screen">
-        <h1>Bate-Papo UOL</h1>
-        <img src="./src/img/logo.png" alt="">
-        <input type="text" placeholder="Digite seu nome" data-test="input-name">
-        <button onclick="connect()" data-test="send-name">Entrar</button>
-    </div>
-    <div class="loading-screen hidden">
-        <img src="./src/img/logo.png" alt="">
-        <img src="./src/img/loading.jpg" alt="">
-        <h2>Entrando...</h2>
-    </div>
-    <div class="messages-screen hidden">
-        <div class="top-bar">
-            <img src="./src/img/logo.png" alt="">
-            <ion-icon name="people" data-test="open-participants" onclick="toggleContactBar()"></ion-icon>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./src/css/reset.css">
+        <link rel="stylesheet" href="./src/css/message.css">
+        <link rel="stylesheet" href="./src/css/contact-bar.css">
+        <link rel="stylesheet" href="./src/css/style.css">
+        <title>Bate-Papo UOL</title>
+    </head>
+    <body>
+        <div class="login-screen">
+            <h1>Bate-Papo UOL</h1>
+            <img src="./src/img/logo.png" alt="UOL Chat Logo">
+            <input
+                type="text"
+                placeholder="Digite seu nome"
+                data-test="input-name">
+            <button onclick="connect()" data-test="send-name">Entrar</button>
         </div>
-        <div class="messages-container">
-            <ul>
-            </ul>
+        <div class="loading-screen hidden">
+            <img src="./src/img/logo.png" alt="UOL Chat Logo">
+            <img src="./src/img/loading.jpg" alt="Loading image">
+            <h2>Entrando...</h2>
         </div>
-        <div class="bottom-bar">
-            <div class="message-input">
-                <input type="text" placeholder="Escreva aqui..." data-test="input-message">
-                <h3 data-test="recipient">Enviando para Todos (público)</h3>
+        <div class="messages-screen hidden">
+            <div class="top-bar">
+                <img src="./src/img/logo.png" alt="UOL Chat Logo">
+                <ion-icon
+                    name="people"
+                    data-test="open-participants"
+                    onclick="toggleContactBar()"></ion-icon>
             </div>
-            <ion-icon name="paper-plane-outline" data-test="send-message" onclick="sendMessage()"></ion-icon>
-        </div>
-        <div class="contact-background hidden" data-test="overlay">
-            <div class="contact-bar">
-                <div class="contact-select">
-                    <div class="contact-bar-title">Escolha um contato<br>para enviar mensagem:</div>
-                    <ul class="contacts">
-                    </ul>
+            <div class="messages-container">
+                <ul></ul>
+            </div>
+            <div class="bottom-bar">
+                <div class="message-input">
+                    <input
+                        type="text"
+                        placeholder="Escreva aqui..."
+                        data-test="input-message">
+                    <h3 data-test="recipient">Enviando para Todos (público)</h3>
                 </div>
-                <div class="privacy-select">
-                    <div class="contact-bar-title">Escolha a visibilidade:</div>
-                    <ul class="privacies">
-                        <li onclick="selectPublic()" class="public" data-test="public">
-                            <ion-icon name="lock-open"></ion-icon>Público<ion-icon class="check" name="checkmark-sharp" data-test="check"></ion-icon>
-                        </li>
-                        <li onclick="selectPrivate()" class="private" data-test="private">
-                            <ion-icon name="lock-closed"></ion-icon>Reservadamente<ion-icon class="check hidden" name="checkmark-sharp" data-test="check"></ion-icon>
-                        </li>
-                    </ul>
+                <ion-icon
+                    name="paper-plane-outline"
+                    data-test="send-message"
+                    onclick="sendMessage()"></ion-icon>
+            </div>
+            <div class="contact-background hidden" data-test="overlay">
+                <div class="contact-bar">
+                    <div class="contact-select">
+                        <div class="contact-bar-title">
+                            Escolha um contato<br>para enviar mensagem:
+                        </div>
+                        <ul class="contacts"></ul>
+                    </div>
+                    <div class="privacy-select">
+                        <div class="contact-bar-title">
+                            Escolha a visibilidade:
+                        </div>
+                        <ul class="privacies">
+                            <li
+                                onclick="selectPublic()"
+                                class="public"
+                                data-test="public">
+                                <ion-icon name="lock-open"></ion-icon>
+                                Público
+                                <ion-icon
+                                    class="check"
+                                    name="checkmark-sharp"
+                                    data-test="check"></ion-icon>
+                            </li>
+                            <li
+                                onclick="selectPrivate()"
+                                class="private"
+                                data-test="private">
+                                <ion-icon name="lock-closed"></ion-icon>
+                                Reservadamente
+                                <ion-icon
+                                    class="check hidden"
+                                    name="checkmark-sharp"
+                                    data-test="check"></ion-icon>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>        
+            </div>
         </div>
-    </div>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./src/js/login.js"></script>
-    <script src="./src/js/manageMessages.js"></script>
-    <script src="./src/js/manageContacts.js"></script>
-    <script src="./src/js/managePrivacy.js"></script>
-</body>
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./src/js/login.js"></script>
+        <script src="./src/js/manageMessages.js"></script>
+        <script src="./src/js/manageContacts.js"></script>
+        <script src="./src/js/managePrivacy.js"></script>
+    </body>
 </html>

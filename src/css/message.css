@@ -1,6 +1,5 @@
 .messages-container {
-    margin-top: 26px;
-    margin-bottom: 10px;
+    margin: 26px 0 10px 0;
     height: calc(100% - 160px);
     overflow-y: scroll;
 }
@@ -16,20 +15,20 @@
 }
 
 .message-status {
-    background-color: #DCDCDC;
+    background-color: #dcdcdc;
 }
 
 .message-all {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 }
 
 .message-private {
-    background-color: #FFDEDE;
+    background-color: #ffdede;
 }
 
 .message-time {
     display: inline-block;
-    color: #AAAAAA;
+    color: #aaaaaa;
     font-size: 1.4rem;
 }
 
@@ -43,6 +42,5 @@
 .message-content strong {
     display: inline-block;
     font-weight: 700;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin: 0 5px;
 }

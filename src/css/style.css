@@ -6,7 +6,7 @@
 
 html {
     font-size: 62.5%;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
 }
 
@@ -26,6 +26,10 @@ h3 {
     margin-top: 3px;
 }
 
+ion-icon {
+    cursor: pointer;
+}
+
 .login-screen {
     display: flex;
     flex-direction: column;
@@ -33,26 +37,25 @@ h3 {
     margin-top: 72px;
 }
 
-.login-screen>img{
+.login-screen > img {
     width: 130px;
 }
 
-.login-screen>input {
-    margin-top: 94px;
-    margin-bottom: 15px;
+.login-screen > input {
+    margin: 93px 0 15px 0;
     width: 261px;
     height: 54px;
     text-align: center;
     font-size: 1.8rem;
-    color: #AEAEAE;
-    border: 1px solid #D7D7D7;
+    color: #aeaeae;
+    border: 1px solid #d7d7d7;
     border-radius: 4px;
 }
 
-.login-screen>button{
+.login-screen > button {
     width: 109px;
     height: 45px;
-    background-color: #E7E7E7;
+    background-color: #e7e7e7;
     border: none;
     border-radius: 9px;
     color: #696969;
@@ -66,9 +69,8 @@ h3 {
     margin-top: 72px;
 }
 
-.loading-screen>img:nth-child(2) {
-    margin-top: 94px;
-    margin-bottom: 22px;
+.loading-screen > img:nth-child(2) {
+    margin: 94px 0 22px 0;
     animation-name: rotate;
     animation-duration: 6s;
     animation-timing-function: linear;
@@ -77,18 +79,18 @@ h3 {
 
 @keyframes rotate {
     from {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
 
 .messages-screen {
     margin: 0 auto;
     width: 80%;
     height: 90vh;
-    background-color: #F3F3F3;
+    background-color: #f3f3f3;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -97,7 +99,7 @@ h3 {
 
 .top-bar {
     height: 80px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: space-between;
@@ -105,17 +107,17 @@ h3 {
     padding: 22px;
 }
 
-.top-bar>img {
+.top-bar > img {
     width: 75px;
 }
 
-.top-bar>ion-icon {
+.top-bar > ion-icon {
     font-size: 45px;
 }
 
 .bottom-bar {
     height: 80px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: space-between;
@@ -123,18 +125,18 @@ h3 {
     padding: 10px 15px 0 15px;
 }
 
-.bottom-bar>ion-icon {
+.bottom-bar > ion-icon {
     font-size: 32px;
 }
 
-.message-input>input{
+.message-input > input {
     height: 30px;
     width: 80%;
     border: none;
     font-size: 1.8rem;
 }
 
-.message-input>input::placeholder{
+.message-input > input::placeholder {
     font-style: italic;
     color: #000000;
 }
@@ -147,5 +149,5 @@ h3 {
 }
 
 .hidden {
-    display: none !important;
+    display: none;
 }

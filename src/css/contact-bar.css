@@ -10,7 +10,7 @@
 
 .contact-bar {
     width: 259px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     padding: 0 18px;
 }
 
@@ -20,15 +20,20 @@
     display: flex;
     align-items: center;
     position: relative;
+    cursor: pointer;
 }
 
 .check {
     position: absolute;
     bottom: 8px;
     right: 0;
-    color: #28BB25;
+    color: #28bb25;
 }
 
+.contacts {
+    max-height: 50vh;
+    overflow-y: scroll;
+}
 
 .contact-select ion-icon:first-child {
     font-size: 27px;
